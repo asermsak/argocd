@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  config.html: "<html>\r\n<head>\r\n    <title>Config</title>\r\n</head>\r\n<body>\r\n
+    \   <h1>Welcome to Config</h1>\r\n</body>\r\n</html>"
+  config1.html: "<html>\r\n<head>\r\n    <title>Config 1</title>\r\n</head>\r\n<body>\r\n
+    \   <h1>Welcome to Config 1</h1>\r\n</body>\r\n</html>"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: myweb-configmap
+  namespace: my-web

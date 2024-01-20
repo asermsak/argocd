@@ -1,8 +1,6 @@
 # Deploy Web Server
 Kubenetes ค่อนข้างซับซ้อนอ่านเข้าใจยาก ใช้เวลาเรียนนาน การเรียนจากแบบฝึกหัด ได้ใช้งานจริง จะทำให้เรียนรู้และเข้าใจชัดเจนและรวดเร็วขึ้น เพื่อให้เรียบง่ายจะแสดงการ deploy nginx ขึ้น Kubenetes  เนื้อหานี้เหมาะกับ Developer ที่ใช้ Docker มาบ้างแล้ว เพื่อที่จะได้นำโปรแกรมที่สร้างขึ้น K8s ได้ด้วยตัวเอง การทำ Auto deploy สำหรับ DevOps จะได้ทำในหัวข้อต่อๆไป จะได้เรียนหัวข้อต่างๆดังนี้
 
-[![Nginx deploy K8s](https://img.youtube.com/vi/LJN_DGwxcnk/0.jpg)](https://www.youtube.com/watch?v=LJN_DGwxcnk&list=PLWMbTFbTi55OtdeRGeerLFQSTw61cEGni&index=9 "หัด deploy ขึ้น Kubernetes กันแบบชิวๆ")
-
 # สิ่งที่จะได้เรียนรู้
 - Namespace ใช้แบ่ง cluster ออกจากกันแบบเสมือน ไม่ต้องแยกเครื่อง เวลาทำงานคนละ Namespace จะไม่เห็นและยุ่งกัน กันคนใช้เผลอไปทำงานคนอื่นพังได้ เวลาจะลบสิ่งที่ทำไว้ก็แค่ลบ Namespace ออก
 - Deployment เป็นการ nginx container (Pod)ขึ้น Kubenetes ตาม spec ที่กำหนดไว้ เราจะทำการ mount Volume ตรงส่วนนี้
@@ -21,7 +19,7 @@ Kubenetes ค่อนข้างซับซ้อนอ่านเข้า�
 kubectl create ns my-web --dry-run=client -o yaml
 kubectl create deployment myweb --image=nginx -n my-web --dry-run=client -o yaml
 kubectl create service clusterip myweb --tcp=80:80 -n my-web --dry-run=client -o yaml 
-kubectl create ingress myweb --rule="myweb.demo.local/*=nginx-svc:80" -n my-web --dry-run=client -o yaml 
+kubectl create ingress myweb --rule="myweb.home.lan/=nginx-svc:80" -n my-web --dry-run=client -o yaml 
 # ConfigMap และ Secret
 kubectl create configmap myweb-configmap --from-file=./config/config.html --from-file=config1.html=./config/config.txt -n my-web --dry-run=client -o yaml
 kubectl create secret generic myweb-secret --from-literal=username=oom --from-literal=password=123456 -n my-web --dry-run=client -o yaml
@@ -70,11 +68,5 @@ kubectl delete ns my-web
 kubectl -n kube-system get pods
 kubectl -n kube-system port-forward traefik-64b96ccbcd-t9k54 9000:9000 --address 0.0.0.0
 ```
-## อ่านเพิ่มเติม
-- [คิดตั้ง K3s](https://www.youtube.com/watch?v=L0C39xgWWKQ&list=PLWMbTFbTi55OtdeRGeerLFQSTw61cEGni&index=3)
-
-- [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
-
-- [Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
 
 
