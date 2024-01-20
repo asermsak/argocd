@@ -1,8 +1,6 @@
 # Deploy Web Server
 Kubenetes ค่อนข้างซับซ้อนอ่านเข้าใจยาก ใช้เวลาเรียนนาน การเรียนจากแบบฝึกหัด ได้ใช้งานจริง จะทำให้เรียนรู้และเข้าใจชัดเจนและรวดเร็วขึ้น เพื่อให้เรียบง่ายจะแสดงการ deploy nginx ขึ้น Kubenetes  เนื้อหานี้เหมาะกับ Developer ที่ใช้ Docker มาบ้างแล้ว เพื่อที่จะได้นำโปรแกรมที่สร้างขึ้น K8s ได้ด้วยตัวเอง การทำ Auto deploy สำหรับ DevOps จะได้ทำในหัวข้อต่อๆไป จะได้เรียนหัวข้อต่างๆดังนี้
 
-[![Nginx deploy K8s](https://img.youtube.com/vi/LJN_DGwxcnk/0.jpg)](https://www.youtube.com/watch?v=LJN_DGwxcnk&list=PLWMbTFbTi55OtdeRGeerLFQSTw61cEGni&index=9 "หัด deploy ขึ้น Kubernetes กันแบบชิวๆ")
-
 # สิ่งที่จะได้เรียนรู้
 - Namespace ใช้แบ่ง cluster ออกจากกันแบบเสมือน ไม่ต้องแยกเครื่อง เวลาทำงานคนละ Namespace จะไม่เห็นและยุ่งกัน กันคนใช้เผลอไปทำงานคนอื่นพังได้ เวลาจะลบสิ่งที่ทำไว้ก็แค่ลบ Namespace ออก
 - Deployment เป็นการ nginx container (Pod)ขึ้น Kubenetes ตาม spec ที่กำหนดไว้ เราจะทำการ mount Volume ตรงส่วนนี้
