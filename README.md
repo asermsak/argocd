@@ -62,7 +62,7 @@ kubectl delete ns my-web
           secretName: myweb-secret
 ...
 ```
-ถ้าเปิดเวปแล้วไม่เห็นให้ลองวิเคราะห์ดูจาก Traefik dashboard หาชื่อ pod แล้ว forward port แล้วไปที่ลิงค์ลักษณะแบบนี้นี้ http://192.168.2.61:9000/dashboard/#/
+ถ้าเปิดเวปแล้วไม่เห็นให้ลองวิเคราะห์ดูจาก Traefik dashboard หาชื่อ pod แล้ว forward port แล้วไปที่ลิงค์
 
 ```
 kubectl -n kube-system get pods
