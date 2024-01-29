@@ -7,7 +7,7 @@ metadata:
   name: myweb
   namespace: my-web
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: myweb
@@ -33,13 +33,12 @@ spec:
       volumes:
       - name: hostpath-volume
         hostPath:
-          path: /home/sroemsak/k3s/docker/registry/myweb/html
-          type: DirectoryOrCreate
+          path: /home/sroemsak/myweb/html
+          type: Directory
       - name: configmap-volume
         configMap:
           name: myweb-configmap
       - name: secret-volume
         secret:
           secretName: myweb-secret
-      
 status: {}
