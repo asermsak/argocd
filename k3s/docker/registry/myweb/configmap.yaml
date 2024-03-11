@@ -6,16 +6,16 @@ data:
         <title>Config</title>
     </head>
     <body>
-        <h1>Welcome to Config v1.1</h1>
+        <h1>Welcome to Config v1</h1>
     </body>
     </html>
   config1.html: |-
     <html>
     <head>
-        <title>Config 1</title>
+        <title>Config</title>
     </head>
     <body>
-        <h1>Welcome to Config 1</h1>
+        <h1>Welcome to Config</h1>
     </body>
     </html>
 kind: ConfigMap
